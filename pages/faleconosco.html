@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Site da Coldigo Geladeiras">
-    <meta name="keywords" content="Geladeiras, Frost-free, Refrigeração">
+    <meta name="keywords" content="Geladeiras, Frost-free, Refrigeraçao">
     <meta name="author" content="Escola Sistêmica">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fale Conosco</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Coldigo Geladeiras</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../assets/js/script.js"></script>
+
 </head>
+
 <body>
-    <header>
-        <img src="../assets/img/logo.png" alt="Logo da Coldigo Geladeiras" width="100px">
-        <h1>Coldigo Geladeiras</h1>
-    </header>
-    <nav>
-        <a href="../index.html"><div class="opcao">Início</div></a>
-        <a href="produtos.html"><div class="opcao">Produtos</div></a>
-        <a href="faleconosco.html"><div class="opcao">Fale Conosco</div></a>
-    </nav>
+    <header></header>
+    <nav></nav>
     <section>
         <h2>Fale conosco!</h2>
-        <p>Ficou com algumas dúvida? Preencha este formulário e entraremos em contato!</p>
-        <form name="frmfaleconosco" method="post" action="#">
+        <p>Ficou com alguma dúvida? Preencha este formulário e entraremos em contato!</p>
+        <form name="frmfaleconsco" method="get" action="#" onsubmit=" return validaFaleConosco()">
             <fieldset class="faleConosco">
-                <legend>Dados pessoais:</legend>
+                <legend>Dados pessoais :</legend>
                 <label for="nome">Nome: </label>
-                <input type="text" name="txtnome" id="nome">
+                <input type="text" name="txtnome" id="nome" placeholder="Nome completo">
                 <label for="fone">Telefone: </label>
-                <input type="text" name="txtfone" id="fone">
+                <input type="text" name="txtfone" id="fone" placeholder="(XX)XXXXX-XXXX">
                 <label for="email">E-mail: </label>
-                <input type="text" name="txtemail" id="email">
+                <input type="email" name="txtemail" id="email">
             </fieldset>
             <fieldset class="faleConosco">
-                <legend>Motivo do contato:</legend>
+                <legend>Motivo do contato :</legend>
                 <label for="motivo">Motivo: </label>
-                <select name="selmotivo" id="motivo">
+                <select name="selmotivo" id="motivo" onchange="verificaMotivo(this.value)">
                     <option value="">Escolha</option>
-                    <option value="RE">Reclamação</option>
-                    <option value="SU">Sugestão</option>
-                    <option value="PR">Informação sobre o produto</option>
+                    <option value="RE">Reclamacao</option>
+                    <option value="SU">Sugestao</option>
+                    <option value="PR">Informacao sobre produto</option>
                 </select>
+                <div id="opcaoProduto"> </div>
                 <label for="comentario">Comentário: </label>
-                <textarea name="txacomentario" id="comentario"></textarea>
-                <button type="reset">Limpar</button><button type="submit">Enviar</button>
+                <textarea name="txtcomentario" id="comentario" class="faleConosco"></textarea>
+                <button type="reset" onclick="verificaMotivo(null)" >Limpar</button><button type="submit">Enviar</button>
             </fieldset>
         </form>
     </section>
-    <footer>Copyright &copy; Escola Sistêmica 2019</footer>    
+   
+    <footer></footer>
 </body>
+
 </html>
