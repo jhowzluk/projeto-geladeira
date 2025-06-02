@@ -11,44 +11,54 @@ body {
 header {
     height: 170px;
     background-color: #008eb6;
+    display: flex; /* Usar flexbox para alinhamento */
+    align-items: center; /* Alinhar itens verticalmente */
+    justify-content: flex-start; /* Alinhar itens ao início */
+    padding: 10px; /* Adicionar um pequeno padding */
 }
 
-
 header img {
-    float: left;
-    height: 150px;
-    width: 150px;
-    margin: 10px;
+    /* float: left; */ /* Remover float */
+    height: 100px; /* Reduzir tamanho da imagem para mobile */
+    width: 100px; /* Reduzir tamanho da imagem para mobile */
+    margin: 0 10px; /* Ajustar margem */
 }
 
 header h1 {
-    float: left;
-    margin: 50px 0 0 30px;
-    font-size: 60px;
+    /* float: left; */ /* Remover float */
+    margin: 0; /* Remover margem extra */
+    font-size: 36px; /* Reduzir tamanho da fonte para mobile */
     color: #ffffff;
+    flex-grow: 1; /* Permite que o título ocupe o espaço restante */
+    text-align: center; /* Centralizar texto em telas menores */
 }
 
 /*MENU*/
 nav {
     clear: both;
-    width: 80%;
+    width: 100%; /* Ocupar 100% da largura em telas menores */
     margin: 0 auto;
-    height: 55px;
+    height: auto; /* Altura automática */
+    display: flex; /* Usar flexbox para o menu */
+    flex-wrap: wrap; /* Permitir que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centralizar os itens do menu */
 }
 
 nav a {
     color: white;
     text-decoration: none;
     text-align: center;
+    padding: 10px 0; /* Ajustar padding para mobile */
 }
 
 nav .opcao {
-    float: left;
-    width: 31.3%;
+    /* float: left; */ /* Remover float */
+    width: 90%; /* Ocupar quase 100% da largura em telas menores */
     background-color: #b1ccf5;
     padding: 10px 0;
-    margin: 0 1%;
-    font-size: 26px;
+    margin: 5px 5%; /* Ajustar margem para espaçar os itens */
+    font-size: 20px; /* Reduzir tamanho da fonte para mobile */
+    box-sizing: border-box; /* Incluir padding e border na largura */
 }
 
 nav .opcao:hover {
@@ -60,7 +70,9 @@ section {
     clear: both;
     min-height: 360px;
     width: 100%;
-    margin-top: Opx;
+    margin-top: 0px;
+    padding: 10px; /* Adicionar padding geral na section */
+    box-sizing: border-box; /* Incluir padding e border na largura */
 }
 
 /* Rodapé */
@@ -74,50 +86,52 @@ footer {
 /* Configuração da página inicial */
 
 section #topo {
-    width: 900px;
+    width: 100%; /* Ocupar 100% da largura em telas menores */
     margin: 0px auto;
-    height: 250px;
+    height: auto; /* Altura automática */
+    display: flex; /* Usar flexbox para topo */
+    flex-direction: column; /* Itens em coluna para mobile */
+    align-items: center; /* Centralizar itens */
 }
 
 .geladeira {
-    height: 250px;
-    width: 125px;
+    height: 150px; /* Reduzir altura da imagem para mobile */
+    width: auto; /* Largura automática */
+    max-width: 100%; /* Garantir que não exceda a largura do contêiner */
+    margin-bottom: 15px; /* Espaço entre imagem e texto */
 }
 
-.direita {
-    float: right;
-}
-
+.direita,
 .esquerda {
-    float: left;
+    float: none; /* Remover float */
+    text-align: center; /* Centralizar texto */
 }
 
 section #titulos {
-    float: left;
-    height: 250px;
-    width: 650px;
+    /* float: left; */ /* Remover float */
+    height: auto; /* Altura automática */
+    width: 100%; /* Ocupar 100% da largura */
     margin: 0px auto;
+    text-align: center; /* Centralizar texto */
 }
 
 h2 {
-
     text-align: center;
     margin-top: 0px;
     margin-bottom: 10px;
-    font-size: 50px;
+    font-size: 36px; /* Reduzir tamanho da fonte para mobile */
 }
 
 h3 {
-
     text-align: center;
-    margin-top: 50px;
-    font-size: 20px;
+    margin-top: 20px; /* Ajustar margem */
+    font-size: 18px; /* Reduzir tamanho da fonte para mobile */
 }
 
 section p {
     clear: both;
     text-align: center;
-    margin: 10px 80px;
+    margin: 10px 20px; /* Ajustar margem para mobile */
 }
 
 
@@ -126,11 +140,13 @@ section p {
 .tabelaProdutos {
     margin: 10px auto;
     text-align: center;
+    width: 100%; /* Ocupar 100% da largura */
+    overflow-x: auto; /* Adicionar scroll horizontal se a tabela for muito larga */
 }
 
 .tituloTabela {
     text-align: center;
-    font-size: 30px;
+    font-size: 24px; /* Reduzir tamanho da fonte para mobile */
     font-weight: bold;
     color: #fff;
     padding: 5px;
@@ -146,7 +162,7 @@ th {
 
 tr,
 td {
-    font-size: 14px;
+    font-size: 12px; /* Reduzir tamanho da fonte da tabela para mobile */
 }
 
 tr:nth-child(even) {
@@ -160,17 +176,19 @@ tr:nth-child(odd) {
 /*Configuracão da página Fale conosco*/ 
 
 .faleConosco {
-    width: 300px;
+    width: 90%; /* Ocupar 90% da largura em telas menores */
     margin: 0px auto;
     font-weight: bold;
     margin-bottom: 10px;
-    
 }
 
-.faleConosco input,.faleConosco textarea,.faleConosco select {
+.faleConosco input,
+.faleConosco textarea,
+.faleConosco select {
     margin: 5px auto;
     width: 100%;
     padding: 5px 0;
+    box-sizing: border-box; /* Incluir padding e border na largura */
 }
 
 .faleConosco textarea {
@@ -179,10 +197,93 @@ tr:nth-child(odd) {
 }
 
 .faleConosco button {
-    width: 30%;
-    margin: 0 10%;
+    width: 45%; /* Aumentar largura dos botões para mobile */
+    margin: 0 2.5%; /* Ajustar margem */
     background-color: #b1ccf5;
     font-weight: bold;
     font-size: 16px;
+    padding: 10px 0; /* Adicionar padding para melhorar o toque */
 }
 
+
+/* --- MEDIA QUERIES --- */
+
+/* Para telas com largura máxima de 768px (tablets e smartphones) */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 48px; /* Ajuste para tablets */
+    }
+
+    nav .opcao {
+        width: 48%; /* Duas colunas para tablets */
+        margin: 5px 1%;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}
+
+/* Para telas com largura máxima de 480px (smartphones) */
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: column; /* Empilhar logo e título em telas pequenas */
+        height: auto;
+        padding-bottom: 15px; /* Adicionar espaço abaixo do header */
+    }
+
+    header img {
+        height: 80px;
+        width: 80px;
+        margin-top: 10px;
+    }
+
+    header h1 {
+        font-size: 30px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav .opcao {
+        width: 90%; /* Uma coluna para smartphones */
+        margin: 5px auto;
+    }
+
+    section #topo {
+        flex-direction: column; /* Garantir que itens do topo fiquem em coluna */
+    }
+
+    .geladeira {
+        height: 100px; /* Ainda menor em smartphones */
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    section p {
+        margin: 10px; /* Margem menor em smartphones */
+    }
+
+    .tituloTabela {
+        font-size: 18px;
+    }
+
+    tr, td {
+        font-size: 10px; /* Fonte da tabela ainda menor */
+    }
+
+    .faleConosco button {
+        width: 80%; /* Botões maiores e centralizados */
+        margin: 5px auto;
+        display: block; /* Para que ocupem a largura e fiquem centralizados */
+    }
+}
